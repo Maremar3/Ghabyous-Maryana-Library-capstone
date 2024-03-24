@@ -2,33 +2,34 @@
 import React, { useEffect, useState } from 'react'
 import "./Book.css"
 import axios from 'axios'
+import Book from './Book'
 //  const URL="http://localhost:5173/books"
-const URL="http://localhost:3000"
+const URL = "http://localhost:3000"
 // const URL="http://localhost:5000/books"
-const fetchHandler = async() =>{
- return await axios.get(URL).then((res) => res.data)
-//console.log(res.data)
+const fetchHandler = async () => {
+  return await axios.get(URL).then((res) => res.data)
+  //console.log(res.data)
 }
 function Books() {
   const [books, setBooks] = useState();
-  useEffect(()=>{
-
-    fetchHandler().then((data)=> setBooks(data));
-  },[]);
+  useEffect(() => {
+    fetchHandler().then((data) => setBooks(data));
+    // fetchHandler().then((data)=> setBooks(data.books));
+  }, []);
   console.log(books)
 
   return (
     <div>
-      {/* <ul>
-        {books && books.map((book,i)=>{
-
-        
-          <div className="book" key={i}> <book book={book} />  </div>
-
-        })
+      <ul>
+        {books &&
+          books.map((book, i) => (
+            <div key={i}>
+              <Book book={book} />
+            </div>
+          ))
         }
-        </ul> */}
-        ALL book here
+      </ul>
+
     </div>
   )
 }
