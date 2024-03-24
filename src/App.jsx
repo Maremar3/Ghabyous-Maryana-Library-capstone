@@ -5,6 +5,8 @@ import Home from "./components/Home.jsx";
 import AddBook  from "./components/AddBook.jsx";
 import About  from "./components/About.jsx";
 import Books   from "./components/Book/Books.jsx";
+// import cors from  "cors"
+
 import { Route, Routes } from 'react-router-dom'
 function App() {
   return (<React.Fragment>
