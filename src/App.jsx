@@ -19,7 +19,6 @@ function App() {
         <Route path="/add" element={<AddBook />} exact />
         <Route path="/books" element={<Books />} exact />
         <Route path="/about" element={<About />} exact />
-
       </Routes>
     </main>
     {/* <div>
