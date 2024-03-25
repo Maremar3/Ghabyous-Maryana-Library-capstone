@@ -46,3 +46,19 @@ img{
     width: 250px;
     height: 250px;
 }
+box{
+    margin-top: 90px;
+    margin-left:20px;
+    /* margin-left: auto;
+    margin-right: auto; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 400px;
+    /* align-items: center; */
+    /* align-self: center; */
+ }
+ Button{
+    background-color: blue;
+    color: aqua;
+ }
