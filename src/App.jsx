@@ -5,7 +5,7 @@ import Home from "./components/Home.jsx";
 import AddBook  from "./components/AddBook.jsx";
 import About  from "./components/About.jsx";
 import Books   from "./components/Book/Books.jsx";
-// import cors from  "cors"
+import BookDetail   from "./components/Book/BookDetail.jsx";
 
 import { Route, Routes } from 'react-router-dom'
 function App() {
@@ -19,8 +19,8 @@ function App() {
         <Route path="/add" element={<AddBook />} exact />
         <Route path="/books" element={<Books />} exact />
         <Route path="/about" element={<About />} exact />
-      
-      </Routes>
+        <Route path="/:id" element= {<BookDetail />}exact />
+        </Routes>
     </main>
     {/* <div>
 <Header/>
