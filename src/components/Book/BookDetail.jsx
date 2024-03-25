@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Button, FormLabel, TextField, FormControlLabel, Checkbox } from '@mui/material'
 import "./Book.css"
 import axios from 'axios'
 function BookDetail() {
   const [checked,setchecked] =useState(false)
-   // const [inputs, setInputs] = useState({})
+    const [inputs, setInputs] = useState({})
+    const history = useNavigate()
     
-    const [inputs, setInputs] = useState({
-      name: '',
-      description: '',
-      price: '',
-      auther: '',
+    // const [inputs, setInputs] = useState({
+    //   name: '',
+    //   description: '',
+    //   price: '',
+    //   auther: '',
      
-      image: ''
-     });
+    //   image: ''
+    //  });
 
     const id =useParams().id;
     //console.log(id)
     useEffect(() => {
         const fetchHandler =async () =>{
-            await axios.get(`http://localhost:3000/${id}`)
+            await axios.get(`http://localhost:3000/book/${id}`)
             // .then(res => console.log(res.data))
            .then((res)=> res.data).then(data=>setInputs(data));
          // .then((res)=> res.data).then(data=>setInputs(data.book));
@@ -31,21 +32,29 @@ function BookDetail() {
 
     },[id])
     const sendRequest = async() =>{
-await axios.put(`http://localhost/3000/${id}`)
+await axios.put(`http://localhost:3000/book/${id}`,{
+  name:String(inputs.name),
+  auther:String(inputs.auther),
+  description:String(inputs.description),
+  price:Number(inputs.price),
+  image:String(inputs.image),
+  available:Boolean(checked)
+
+}).then(res => res.data)
     }
     const handleSubmit = (e) => {
         e.preventDefault();
         //console.log(inputs)
-       // sendRequest().then(() => history('/'))
+        sendRequest().then(() => history('/'))
       }
       const handleChange = (e) => {
         console.log(e);
-        // setInputs((prevState) => ({
-        //   ...prevState,
-        //   [e.target.name]: e.target.value
-        // }))
+        setInputs((prevState) => ({
+          ...prevState,
+          [e.target.name]: e.target.value
+        }))
       }
-      console.log(inputs)
+      //console.log(inputs)
   return (
     <div>
     {inputs &&(

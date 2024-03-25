@@ -27,7 +27,7 @@ function AddBook() {
 
   }
   const sendRequest = async() =>{
-    await axios.post("http://localhost:3000",{
+    await axios.post("http://localhost:3000/book",{
     name:String(inputs.name),
     auther:String(inputs.auther),
     description:String(inputs.description),
