@@ -2,15 +2,19 @@ import { Description } from '@mui/icons-material';
 import { Button, FormLabel, TextField, FormControlLabel, Checkbox } from '@mui/material'
 import "../components/Book/Book.css"
 import React, { useState } from 'react'
+import { useNavigate} from 'react-router-dom';
+import axios from 'axios';
+
 // import box from 'react-dom'
 
 function AddBook() {
+  const history = useNavigate();
   const [inputs, setInputs] = useState({
     name: '',
     description: '',
     price: '',
     auther: '',
-    available: false,
+   
     image: ''
   });
   const [checked, setChecked] = useState(false);
@@ -22,23 +26,39 @@ function AddBook() {
     //console.log(e.target.name,"value",e.target.value)
 
   }
+  const sendRequest = async() =>{
+    await axios.post("http://localhost:3000",{
+    name:String(inputs.name),
+    auther:String(inputs.auther),
+    description:String(inputs.description),
+    price:Number(inputs.price),
+    image:String(inputs.image),
+    available:Boolean(checked)
+  }).then(res=>res.data);
+}
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(inputs)
+    sendRequest().then(() => history('/'))
+  }
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <box>
 
 
           <FormLabel>Name</FormLabel>
           <TextField value={inputs.name} onChange={handleChange} margin="normal" variant='outlined' name="name" />
           <FormLabel>Auther</FormLabel>
-          <TextField margin="normal" variant='outlined' name="auther" />
+          <TextField value={inputs.auther} onChange={handleChange} margin="normal" variant='outlined' name="auther" />
           <FormLabel>Price</FormLabel>
-          <TextField type='number' margin="normal" variant='outlined' name="price" />
+          <TextField type='number' value={inputs.price} onChange={handleChange} margin="normal" variant='outlined' name="price" />
           <FormLabel>Description</FormLabel>
-          <TextField margin="normal" variant='outlined' name="description" />
+          <TextField value={inputs.description} onChange={handleChange} margin="normal" variant='outlined' name="description" />
           <FormLabel>image</FormLabel>
-          <TextField margin="normal" variant='outlined' name="image" />
-          {/* <FormControlLabel control={<Checkbox checked={false} />} label="Label" /> */}
+          <TextField margin="normal" value={inputs.image} onChange={handleChange} variant='outlined' name="image" />
+         
           <FormControlLabel control={<Checkbox checked={checked} onChange={() => setChecked(!checked)} />} label="Label" />
           <Button variant='contain' type='submit'>
             Add Book
