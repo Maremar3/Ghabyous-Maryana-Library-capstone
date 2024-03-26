@@ -12,10 +12,11 @@ const Header = () => {
       <AppBar sx={{ backgroundColor: '#232F3D' }} position="fixed">
         {/* <APPBAr position  = "sticky"> */}
         <Toolbar>
+          <NavLink to="/" style={{color:"white"}}> 
           <Typography>
             <LibraryBooksIcon />
 
-          </Typography>
+          </Typography></NavLink>
           <Tabs
             sx={{ ml: "auto" }}
             textColor="inherit" indicatorColor="secondary" value={value} onChange={(e, val) => setValue(val)}>

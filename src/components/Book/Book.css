@@ -62,3 +62,18 @@ box{
     background-color: blue;
     color: aqua;
  }
+ .box About{
+    margin-top: 20px;
+    margin-left:20px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 600px;
+ }
+ .pic{
+    display: flex;
+    width: 350;
+    height: 250;
+    flex-wrap: wrap;
+    margin-top: 55;
+ }
