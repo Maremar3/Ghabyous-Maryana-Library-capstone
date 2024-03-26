@@ -26,6 +26,7 @@ function BookDetail() {
            .then((res)=> res.data).then(data=>setInputs(data));
          // .then((res)=> res.data).then(data=>setInputs(data.book));
         }
+        //Promise handling
        fetchHandler()
       ///correct/// fetchHandler().then((data) => setInputs(data.book))
        //fetchHandler().then((data) =>setInputs(data))
@@ -45,7 +46,7 @@ await axios.put(`http://localhost:3000/book/${id}`,{
     const handleSubmit = (e) => {
         e.preventDefault();
         //console.log(inputs)
-        sendRequest().then(() => history('/'))
+        sendRequest().then(() => history('/books'))
       }
       const handleChange = (e) => {
         console.log(e);

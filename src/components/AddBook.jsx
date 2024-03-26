@@ -59,7 +59,7 @@ function AddBook() {
           <FormLabel>image</FormLabel>
           <TextField margin="normal" value={inputs.image} onChange={handleChange} variant='outlined' name="image" />
          
-          <FormControlLabel control={<Checkbox checked={checked} onChange={() => setChecked(!checked)} />} label="Label" />
+          <FormControlLabel control={<Checkbox checked={checked} onChange={() => setChecked(!checked)} />} label="Available" />
           <Button variant='contain' type='submit'>
             Add Book
           </Button>
