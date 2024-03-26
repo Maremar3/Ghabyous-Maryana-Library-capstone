@@ -17,7 +17,8 @@ const deleteHandler =async() =>{
   await axios
   .delete(`http://localhost:3000/book/${_id}`)
   .then(res=>res.data)
-  .then(()=>history("/books"))
+  .then(()=>history("/"))
+ // .then(()=>history("/books"))
 }
   return (
     <div className='card'>

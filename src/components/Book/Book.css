@@ -20,7 +20,7 @@ li{
     box-shadow: 5px 5px 10 px #ccc;
     display:flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
 }
 .card > img{
     width:100%;
