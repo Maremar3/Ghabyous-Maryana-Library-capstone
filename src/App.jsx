@@ -9,7 +9,8 @@ import BookDetail   from "./components/Book/BookDetail.jsx";
 
 import { Route, Routes } from 'react-router-dom'
 function App() {
-  return (<React.Fragment>
+  return (
+  <React.Fragment>
     <header>
       <Header />
     </header>
@@ -22,9 +23,6 @@ function App() {
         <Route path="/:id" element= {<BookDetail />}exact />
         </Routes>
     </main>
-    {/* <div>
-<Header/>
-  </div> */}
   </React.Fragment>
 
   );

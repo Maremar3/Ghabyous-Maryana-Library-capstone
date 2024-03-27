@@ -6,16 +6,12 @@ import { NavLink } from 'react-router-dom'
 const Header = () => {
   const [value, setValue] = useState(1);
   return (
-
     <div>
-
       <AppBar sx={{ backgroundColor: '#232F3D' }} position="fixed">
-        {/* <APPBAr position  = "sticky"> */}
-        <Toolbar>
+          <Toolbar>
           <NavLink to="/" style={{color:"white"}}> 
           <Typography>
             <LibraryBooksIcon />
-
           </Typography></NavLink>
           <Tabs
             sx={{ ml: "auto" }}

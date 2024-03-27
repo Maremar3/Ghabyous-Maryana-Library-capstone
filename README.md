@@ -26,7 +26,7 @@ npm install @mui/icons-material<br>
 * To add book icon instead of text open this link <br>
 https://mui.com/material-ui/material-icons<br>
 5-Search for books to get the books icon then chose library book or any icon then copy the link and past it in Visual Studio headerfile, you will find the icon.<br>
-__My ROUTE__<br>
+__My ROUTES__<br>
 * Main route , main home page <br>
 http://localhost:5173/<br>
 * To add book <br>

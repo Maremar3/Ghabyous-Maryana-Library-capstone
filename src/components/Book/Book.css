@@ -28,36 +28,29 @@ li{
 }
 .card article{
    padding: 5px; 
-
 }
 .card h3{
-    /* margin: 0; */
+   
     padding: 4px;
 }
 .card p{
-    /* margin: 0; */
+
     padding: 3px;
 }
-/* .card h2{
-    margin: 0;
 
-} */
 img{
     width: 250px;
     height: 250px;
 }
 box{
     margin-top: 90px;
-    margin-left:20px;
-    /* margin-left: auto;
-    margin-right: auto; */
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 400px;
-    /* align-items: center; */
-    /* align-self: center; */
- }
+  
+   }
  Button{
     background-color: blue;
     color: aqua;
@@ -71,22 +64,33 @@ box{
     width: 600px;
  }
  .pic{
-  
-    width: 250px;
-    height: 250px;
+ 
     flex-wrap: wrap;
-    /* margin-top: 55; */
     float:right
  }
  .paragraph{
 
-    width: 350px;
-    height: 250px;
+   
+    text-align: justify;  /* For Edge */
+    text-align-last:lef;
     flex-wrap: wrap;
     margin-top: 55;
-    float:left
+    float:left;
+    margin-right: 1rem;
  }
  .format{
     display: flex;
-
+ }
+ .allpage{
+margin-left: 2rem;
+margin-right: 2rem;
+ }
+ .addform{
+    border: 0px solid;
+    border-color:'#080099';
+    position: absolute;
+    margin-top: 3rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
  }

@@ -2,11 +2,8 @@ import { Description } from '@mui/icons-material';
 import { Button, FormLabel, TextField, FormControlLabel, Checkbox } from '@mui/material'
 import "../components/Book/Book.css"
 import React, { useState } from 'react'
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
-// import box from 'react-dom'
-
 function AddBook() {
   const history = useNavigate();
   const [inputs, setInputs] = useState({
@@ -14,7 +11,7 @@ function AddBook() {
     description: '',
     price: '',
     auther: '',
-   
+
     image: ''
   });
   const [checked, setChecked] = useState(false);
@@ -23,31 +20,28 @@ function AddBook() {
       ...prevState,
       [e.target.name]: e.target.value
     }))
-    //console.log(e.target.name,"value",e.target.value)
-
+    }
+  const sendRequest = async () => {
+    await axios.post("http://localhost:3000/book", {
+      name: String(inputs.name),
+      auther: String(inputs.auther),
+      description: String(inputs.description),
+      price: Number(inputs.price),
+      image: String(inputs.image),
+      available: Boolean(checked)
+    }).then(res => res.data);
   }
-  const sendRequest = async() =>{
-    await axios.post("http://localhost:3000/book",{
-    name:String(inputs.name),
-    auther:String(inputs.auther),
-    description:String(inputs.description),
-    price:Number(inputs.price),
-    image:String(inputs.image),
-    available:Boolean(checked)
-  }).then(res=>res.data);
-}
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputs)
     sendRequest().then(() => history('/'))
   }
   return (
-    <div>
+    <div className='addform'>
       <form onSubmit={handleSubmit}>
         <box>
 
-
+          <FormLabel><p align='center' color='#080099'><b>Enter Your Book Detail</b></p></FormLabel>
           <FormLabel>Name</FormLabel>
           <TextField value={inputs.name} onChange={handleChange} margin="normal" variant='outlined' name="name" />
           <FormLabel>Auther</FormLabel>
@@ -58,68 +52,13 @@ function AddBook() {
           <TextField value={inputs.description} onChange={handleChange} margin="normal" variant='outlined' name="description" />
           <FormLabel>image</FormLabel>
           <TextField margin="normal" value={inputs.image} onChange={handleChange} variant='outlined' name="image" />
-         
-          <FormControlLabel control={<Checkbox checked={checked} onChange={() => setChecked(!checked)} />} label="Available" />
-          <Button variant='contain' type='submit'>
+          <Button variant='contained' type='submit'>
             Add Book
           </Button>
-
-
         </box>
       </form>
     </div>
   )
-  // return
-
-
-  // <form>
-
-  // {/* <Box
-  //  display = "flex"
-  //   flexDirection="column"
-  //    justifyContent={'center'} 
-  //    maxWidth={700}
-  //   alignContent={"center"}
-  //   alignSelf="center"
-  //   marginLeft={"auto"}
-  //   marginRight="auto"
-  //   marginTop={10}
-  // > */}
-  // <FormLabel>Name</FormLabel>
-  // <TextField margin="normal" fullwidth variant='outlined' name="name"/>
-  //  {/* <FormLabel>Auther</FormLabel>
-  //   <TextField value={inputs.name} onChange={handleChange} margin="normal" fullwidth variant='outlined' name="name"/> */}
-  // <FormLabel>Auther</FormLabel>
-  // <TextField margin="normal" fullwidth variant='outlined' name="auther"/>
-  // {/* <FormLabel>Description</FormLabel>
-  //   <TextField value={inputs.description} onChange={handleChange} margin="normal" fullwidth variant='outlined' name="auther"/> */}
-  //  <FormLabel>Description</FormLabel>
-  // <TextField margin="normal" fullwidth variant='outlined' name="description"/>
-  //  {/* <FormLabel>Price</FormLabel>
-  //   <TextField value={inputs.price} onChange={handleChange} margin="normal" fullwidth variant='outlined' name="description"/> */}
-  // <FormLabel>Price</FormLabel>
-  // <TextField type="number" margin="normal" fullwidth variant='outlined' name="price"/>
-  // <FormLabel>image</FormLabel>
-  // <TextField  margin="normal" fullwidth variant='outlined' name="image"/>
-  // {/* <TextField value={inputs.image} onChange={handleChange} margin="normal" fullwidth variant='outlined' name="image"/> */}
-  //  {/* <FormControlLabel control={<Checkbox checked={inputs.available} />} label="available" /> */}
-  // {/* <Button variant="contained" type="submit">Add Book</Button> */}
-  //  {/* </Box> */}
-
-  // </form>
-
-
-
-
-
-  // {/* <form> */}
-
-  // {/* <FormLabel>Name</FormLabel> */}
-  // {/* <TextField  margin="normal" fullwidth variant='outlined' name="name" />  */}
-
-
-  // // </form>
-
 }
 
 export default AddBook

@@ -6,13 +6,11 @@ import Book from './Book'
 const URL = "http://localhost:3000/book"
 const fetchHandler = async () => {
   return await axios.get(URL).then((res) => res.data)
-  //console.log(res.data)
 }
 function Books() {
   const [books, setBooks] = useState();
   useEffect(() => {
     fetchHandler().then((data) => setBooks(data));
-    // fetchHandler().then((data)=> setBooks(data.books));
   }, []);
   console.log(books)
 
