@@ -9,6 +9,7 @@ function Book(props) {
   const { _id, name, auther,description, price, image } = props.book;
   const id =useParams().id;
   const history =useNavigate()
+  ////////console.log(props.book)
 //  our delete function to delte one book depending in book ID
 const deleteHandler = async () =>{
 // I used Axios to get the data , then delete it
