@@ -5,7 +5,7 @@ __I will Descripe My website Map here__<br>
 * B- ADD BOOK Tab , here you can add a new Book .<br>
 * C- Books Tab you can display all the books that we have, each Book have two button on to update this book(update the name of the book, the auther, the desription , the image and the price), and the other one to delete this book .<br>
 * D- ABOUT US Tab  to descripe our library<br>
-## Technologies used to deign this website<br>
+__Technologies used to deign this website__<br>
 * A- CSS (Cascade Style Sheet)<br>
 * B- MongoDB<br>
 * C- JavaScript,Express<br>
@@ -30,15 +30,15 @@ __My ROUTE__<br>
 * Main route , main home page <br>
 http://localhost:5173/<br>
 * To add book <br>
-http://localhost:5173/add
+http://localhost:5173/add<br>
 * To display your book<br>
 http://localhost:5173/Books<br>
 * To update your book<br>
-http://localhost:5173/your book ID 
+http://localhost:5173/your book ID <br>
 <br> example http://localhost:5173/65fafb52b133a92f113be7a4<br>
 * To open About Us page<br>
-http://localhost:5173/About
-<br>
+http://localhost:5173/About<br>
+
 __Improvement in future__<br>
-*I will add user collection make login and signup user to register user*<br>
-*I will give autherization to those user to update,delete and add Books*<br>
+* I will add user collection make login and signup user to register user<br>
+* I will give autherization to those user to update,delete and add Books<br>
