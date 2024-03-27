@@ -5,6 +5,7 @@ import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import { NavLink } from 'react-router-dom'
 const Header = () => {
   const [value, setValue] = useState(1);
+  //this is our blue header has four links , the first one on left hand an icon
   return (
     <div>
       <AppBar sx={{ backgroundColor: '#232F3D' }} position="fixed">

@@ -31,6 +31,7 @@ function AddBook() {
       available: Boolean(checked)
     }).then(res => res.data);
   }
+  // function to add book detail to our collection book
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(inputs)
@@ -38,6 +39,7 @@ function AddBook() {
   }
   return (
     <div className='addform'>
+      {/* our form to submit our book detail */}
       <form onSubmit={handleSubmit}>
         <box>
 

@@ -4,6 +4,9 @@ import "./Book/Book.css"
 function About() {
   return (
     <div>
+      {/* this page just about us */}
+      {/* some css code in Book.css and some inside our tag here */}
+      {/* I used Mui/material library */}
       <Box marginLeft={'40px'} marginRight={'40px'} disply='flex' flexDirection ='column' alignItems='center'    margin-top='40px'
         text-align='justify'   text-align-last='lef' marginTop={15}>
       <Typography variant='h4' marginTop='2rem'> Chandler Kids Library</Typography>

@@ -8,7 +8,6 @@ function BookDetail() {
   const [inputs, setInputs] = useState({})
   const history = useNavigate()
   const id = useParams().id;
-
   useEffect(() => {
     const fetchHandler = async () => {
       await axios.get(`http://localhost:3000/book/${id}`)
@@ -16,9 +15,10 @@ function BookDetail() {
     }
     //Promise handling
     fetchHandler()
-  
-  }, [id])
+    }, [id])
+    //our update function
   const sendRequest = async () => {
+    // used Xios to send data
     await axios.put(`http://localhost:3000/book/${id}`, {
       name: String(inputs.name),
       auther: String(inputs.auther),
@@ -31,8 +31,10 @@ function BookDetail() {
   }
   const handleSubmit = (e) => {
     e.preventDefault();
+    //after update it wiil back to main page ,books
     sendRequest().then(() => history('/books'))
   }
+  //it will excahange the value in input box with the value in our collection
   const handleChange = (e) => {
     console.log(e);
     setInputs((prevState) => ({

@@ -1,4 +1,4 @@
-//import { Description } from '@mui/icons-material';
+
 import { Button } from '@mui/material'
 import React from 'react'
 import axios from 'axios'
@@ -9,9 +9,9 @@ function Book(props) {
   const { _id, name, auther,description, price, image } = props.book;
   const id =useParams().id;
   const history =useNavigate()
- 
+//  our delete function to delte one book depending in book ID
 const deleteHandler = async () =>{
-
+// I used Axios to get the data , then delete it
   await axios
   .delete(`http://localhost:3000/book/${_id}`)
   .then(res=>res.data)
