@@ -57,8 +57,8 @@ function BookDetail() {
             <TextField value={inputs.description} onChange={handleChange} margin="normal" variant='outlined' name="description" />
             <FormLabel>image</FormLabel>
             <TextField margin="normal" value={inputs.image} onChange={handleChange} variant='outlined' name="image" />
-            <FormControlLabel control={<Checkbox checked={checked} onChange={() => setChecked(!checked)} />} label="Label" />
-            <Button variant='contain' type='submit'>
+            {/* <FormControlLabel control={<Checkbox checked={checked} onChange={() => setChecked(!checked)} />} label="Label" /> */}
+            <Button variant='outlined' type='submit'>
               Update Book
             </Button>
 

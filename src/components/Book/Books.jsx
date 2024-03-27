@@ -15,7 +15,7 @@ function Books() {
   console.log(books)
 
   return (
-    <div>
+    <div className='displayall'>
       <ul>
         {books &&
           books.map((book, i) => (

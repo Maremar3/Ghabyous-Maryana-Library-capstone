@@ -8,15 +8,15 @@ const Header = () => {
   //this is our blue header has four links , the first one on left hand an icon
   return (
     <div>
-      <AppBar sx={{ backgroundColor: '#232F3D' }} position="fixed">
+      <AppBar sx={{ backgroundColor: '#E0AE87' }} position="fixed">
           <Toolbar>
-          <NavLink to="/" style={{color:"white"}}> 
+          <NavLink to="/" style={{color:"black"}}> 
           <Typography>
             <LibraryBooksIcon />
           </Typography></NavLink>
           <Tabs
             sx={{ ml: "auto" }}
-            textColor="inherit" indicatorColor="secondary" value={value} onChange={(e, val) => setValue(val)}>
+            color="black" indicatorColor="secondary" value={value} onChange={(e, val) => setValue(val)}>
             <Tab LinkComponent={NavLink} to="/add" label="Add Book" />
             <Tab LinkComponent={NavLink} to="/Books" label="Books" />
             <Tab LinkComponent={NavLink} to="/About" label="About Us" />
