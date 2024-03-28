@@ -22,7 +22,7 @@ function AddBook() {
     }))
     }
   const sendRequest = async () => {
-    await axios.post("http://localhost:3000/book", {
+    await axios.post("https://ghabyous-maryana-booklibrary-capstone.onrender.com/book", {
       name: String(inputs.name),
       auther: String(inputs.auther),
       description: String(inputs.description),

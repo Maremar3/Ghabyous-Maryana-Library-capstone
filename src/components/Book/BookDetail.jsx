@@ -10,7 +10,7 @@ function BookDetail() {
   const id = useParams().id;
   useEffect(() => {
     const fetchHandler = async () => {
-      await axios.get(`http://localhost:3000/book/${id}`)
+      await axios.get(`https://ghabyous-maryana-booklibrary-capstone.onrender.com/book/${id}`)
         .then((res) => res.data).then(data => setInputs(data));
     }
     //Promise handling
@@ -19,7 +19,7 @@ function BookDetail() {
     //our update function
   const sendRequest = async () => {
     // used Xios to send data
-    await axios.put(`http://localhost:3000/book/${id}`, {
+    await axios.put(`https://ghabyous-maryana-booklibrary-capstone.onrender.com/book/${id}`, {
       name: String(inputs.name),
       auther: String(inputs.auther),
       description: String(inputs.description),

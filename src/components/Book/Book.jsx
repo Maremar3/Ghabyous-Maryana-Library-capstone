@@ -14,7 +14,7 @@ function Book(props) {
 const deleteHandler = async () =>{
 // I used Axios to get the data , then delete it
   await axios
-  .delete(`http://localhost:3000/book/${_id}`)
+  .delete(`https://ghabyous-maryana-booklibrary-capstone.onrender.com/book/${_id}`)
   .then(res=>res.data)
   .then(()=>history("/"))
   .then(()=>history("/books"))
